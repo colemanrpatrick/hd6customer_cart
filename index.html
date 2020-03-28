@@ -14,6 +14,7 @@
 	<link href="cart.css" rel="stylesheet">
 	<link href="home.css" rel="stylesheet">
 	<link href="detailStyles.css" rel="stylesheet">
+	<script>history.scrollRestoration = "manual"</script>
 	<title>Chief Luau at Wet & Wild - Hawaii Discount</title>
 </head>
 <body>
@@ -89,8 +90,15 @@
 					<h1 id="product-h1">Chiefs Luau at Wet N Wild - Hawaii Discount</h1>
 				</header>
 			</div>
-			<div id="book-now-cont">
-				<button id="book-now" type="button"><span class="span-1">reserve now</span><span class="span-2"><i class="material-icons">arrow_forward</i></span></button>
+			<div id="reserve-now-cont">
+				<button id="reserve-now" type="button"><span class="span-1">reserve now</span><span class="span-2"><i class="material-icons">arrow_forward</i></span></button>
+				<script>
+				$(document).ready(function(){
+					$("#reserve-now").on("click",function(){
+						$('html,body').animate({scrollTop: $("#cart").offset().top});
+					});
+				});
+				</script>
 			</div>
 
 			<div class="product-main" id="product-main">
@@ -101,7 +109,6 @@
 						</div>
 						<div class="ContentBG">
 							<div style="padding:15px;">
-
 								<h1 class="GreenLrg" itemprop="name">Chief's Luau at Wet 'n' Wild Hawaii <font color="#006400"><b><br></b></font></h1>
 								<p>Held at a brand new facility at Wet 'n' Wild Hawaii, Oahus popular water park, Chiefs Luau features a setting unlike any other luau on the island. The world-class multi-million dollar facility was custom designed by Chief Sielu himself for the luau's permanent new home. Enjoy an oasis that has been built where Cutter's Island formerly was, featuring a backlit 50-foot cascading waterfall for the perfect backdrop.<br></p>
 								<p>Chief's Luau is highly interactive and very funny! What makes this luau different is Chief Sielu, a world champion fire-knife dancer and Polynesian comedian. Chief Sielu is widely regarded as the best and funniest Polynesian entertainer in the South Pacific. He has appeared on Late Night with David Letterman, The Tonight Show, Travel Channel, Discovery Channel, BBC, MTV and Oprah Winfrey.</p>
@@ -163,7 +170,10 @@
 									<dd>from</dd>
 									<dt>$108</dt>
 								</dl>
-								<a href="">seating chart</a>
+								<div class="seating-chart" id="seating-aloha" onclick="idToggle('seating-aloha','active')">
+									<img src="images/seatingAloha.png" alt="">
+									<span>[Close]</span>
+								</div>
 							</div>
 							<div class="group-description-right">
 								<p>includes...</p>
@@ -174,6 +184,7 @@
 									<li>descrtiption list item</li>
 									<li>descrtiption list item</li>
 								</ul>
+								<button type="button" name="button" class="book-package-now">book now</button>
 							</div>
 						</div><!--=====================-->
 						<div class="group-description">
@@ -184,7 +195,10 @@
 									<dd>from</dd>
 									<dt>$108</dt>
 								</dl>
-								<a href="">seating chart</a>
+								<div class="seating-chart" id="seating-par" onclick="idToggle('seating-par','active')">
+									<img src="images/seatingPar.png" alt="">
+									<span>[Close]</span>
+								</div>
 							</div>
 							<div class="group-description-right">
 								<p>includes...</p>
@@ -195,6 +209,7 @@
 									<li>descrtiption list item</li>
 									<li>descrtiption list item</li>
 								</ul>
+								<button type="button" name="button" class="book-package-now">book now</button>
 							</div>
 						</div><!--=====================-->
 						<div class="group-description">
@@ -205,7 +220,12 @@
 									<dd>from</dd>
 									<dt>$108</dt>
 								</dl>
-								<a href="">seating chart</a>
+								<div class="seating-chart" id="seating-roy" onclick="idToggle('seating-roy','active')">
+									<img src="images/seatingRoy.png" alt="">
+									<span>[Close]</span>
+								</div>
+								<script>
+								</script>
 							</div>
 							<div class="group-description-right">
 								<p>includes...</p>
@@ -216,6 +236,7 @@
 									<li>descrtiption list item</li>
 									<li>descrtiption list item</li>
 								</ul>
+								<button type="button" name="button" class="book-package-now">book now</button>
 							</div>
 						</div>
 					</div><!--- =========== -->
@@ -223,15 +244,15 @@
 						<input name="cart" type="hidden" value="True">
 						<div id="cart-update"></div><!-- ========= -->
 						<div id="cart-bg">
-              <button type="button" id="close-cart">close</button>
+              <button type="button" id="close-cart"><span class="material-icons">close</span></button>
 							<div id="cart-window">
 								<div id="cart">
 									<div id="prices-container">
 										<div class="form-group cart-form-group" id="date-bloc">
-											<label class="control-label col-md-2" for="Activity_Date">Activity Date</label>
+											<label class="control-label col-md-2" for="Activity_Date">Pick a date</label>
 											<div class="col-md-10">
 												<div id="datepicker"></div><input class="datepicker" id="test-input" name="ActivityDate_1991" tabindex="0" type="text" value="">
-                         <button id="packages" type="button">reservations</button>
+                         <button id="packages" type="button">select a package</button>
 											</div>
 										</div>
 										<div class="accordion" id="group-container"></div>
@@ -607,10 +628,8 @@
 	       return elem && (elem.offsetWidth === 0);
 	   }
 	</script>
-	<script src="toggle.js" type="text/javascript">
-	</script>
-	<script src="nav.js" type="text/javascript">
-	</script>
+	<script src="toggle.js" type="text/javascript"></script>
+	<script src="nav.js" type="text/javascript"></script>
 	<script src="scrolling.js">
 	</script>
 </body>

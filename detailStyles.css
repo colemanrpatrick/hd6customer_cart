@@ -125,14 +125,14 @@ li, ul {
   box-shadow: inset 0px 0px 10px #00000080;
 	background-color: mediumvioletred;
 }
-#book-now-cont {
+#reserve-now-cont {
   width: 100%;
   text-align: center;
   padding-top: 0.25em;
   background-color: beige;
   display: none;
 }
-#book-now {
+#reserve-now {
   display: inline-table;
   background-color: #00a00e;
   font-size: 1.5em;
@@ -142,24 +142,24 @@ li, ul {
   cursor: pointer;
   margin: 0.5em auto;
 }
-#book-now .span-1, #book-now .span-2 {
+#reserve-now .span-1, #reserve-now .span-2 {
   display: table-cell;
   vertical-align: middle;
 }
-#book-now .span-1 {
+#reserve-now .span-1 {
   padding: 0.5em;
   color: gold;
   line-height: 1em;
   text-transform: capitalize;
 }
-#book-now .span-2 {
+#reserve-now .span-2 {
   width: 2em;
   height: 2em;
   position: relative;
   border-radius: 3em;
   background-color: gold;
 }
-#book-now .span-2 .material-icons {
+#reserve-now .span-2 .material-icons {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -169,28 +169,34 @@ li, ul {
   z-index: 5;
   transition: 0.5s;
 }
-#book-now:hover .span-2 .material-icons {
+#reserve-now:hover .span-2 .material-icons {
   transform: translate(-50%, -50%) rotate(90deg);
 }
 @media(max-width:1080px) {
   .product-banner h1 {
     width: 11em;
   }
+  .product-banner h1 {
+	width: 11em;
+	right: 0;
+	left: auto;
+	transform: translateY(-50%);
+  }
 }
 @media(max-width:950px) {
-  #book-now-cont {
+  #reserve-now-cont {
     display: block;
   }
 }
 @media(max-width:890px) {
-  .product-banner {
+  /* .product-banner {
     background-size: 50%, 53%;
-  }
+  } */
 }
 @media(max-width:750px) {
   .product-banner {
     height: 16em;
-    background-size: 40%, 65%;
+    /* background-size: 40%, 65%; */
   }
 }
 @media(max-width:660px) {
@@ -202,7 +208,7 @@ li, ul {
   }
   .product-banner {
     height: 12em;
-    background-size: 104%, 0%;
+    /* background-size: 104%, 0%; */
   }
 }
 /*=========================*/
@@ -448,7 +454,7 @@ li, ul {
 }
 @media(max-width:730px) {
   .cart-wrapper {
-    width: 30em;
+  	width: 100%;
   }
   #participants-names-ages {
     padding: 2em 3em;
@@ -514,4 +520,38 @@ li, ul {
 	text-transform: capitalize;
 	list-style-image: url("images/listIcon.png");
 	list-style-position: inside;
+}
+@media(max-width:940px){
+  .group-description {
+	   width: 32.9%;
+	   display: inline-block;
+	   text-align: center;
+	   vertical-align: top;
+  }
+  .group-description-left {
+	  display: block;
+	  vertical-align: top;
+	  text-align: center;
+  }
+  .seating-chart {
+	  width: 8em;
+	  margin: 0 auto;
+  }
+}
+@media(max-width:650px){
+  .group-description {
+	  width: 100%;
+  }
+  .cart-wrapper {
+	 width: 100%;
+	 max-width: 30em;
+  }
+  /* .group-description-right {
+	  width: 100%;
+  } */
+  .group-description-right {
+	  vertical-align: top;
+	  display: inline-block;
+	  width: 50%;
+  }
 }

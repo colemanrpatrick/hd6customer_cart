@@ -134,7 +134,7 @@ body{
    left: 0;
    top: 7.5em;
    width: 100%;
-   z-index: 999;
+   z-index: 997;
 }
 .main-nav ul{
   display: table;
@@ -305,7 +305,7 @@ body{
 	color: white;
 }
 @media(max-width:1000px){
-	
+
 }
 @media(max-width:800px){
   .blurb h1 {
@@ -320,7 +320,7 @@ body{
   width: 2.75em;
   height: 2em;
   transition: 0.3s;
-  cursor: pointer; 
+  cursor: pointer;
   display: none;
   z-index: 9999;
   background-color: transparent;

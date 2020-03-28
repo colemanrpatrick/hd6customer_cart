@@ -40,6 +40,10 @@ input{
 .ui-spinner a.ui-spinner-button {
     display: none !important;
 }
+/*==== this is probably going to have to change =======*/
+#date-bloc {
+	margin-bottom: 2em;
+}
 /*======= cart ========*/
 #cart-update .material-icons {
    float: left;
@@ -523,6 +527,7 @@ input[type="text"] {
 	border-radius: 2em;
 	background-color: #35b632;
 }
+
 /*==============================================*/
 
 /* removes white space in text inputs*/
@@ -642,28 +647,35 @@ input[type="text"] {
 }
 /*==============================================*/
  @media(max-width:950px){
-    .p-desc {
-        width: 60%;
-    }
+	 .p-desc {
+	 	width: 60%;
+	 	max-width: 56%;
+	 }
     .prices {
-        width: 9em;
+        width: 6em;
     }
-    #participants-names-ages {
-    width: 100%;
-    text-align: left;
-    padding: 2em 10em;
-   }
+		#participants-names-ages {
+			width: 100%;
+			text-align: left;
+			padding: 2em 4em;
+	 }
+}
+@media(max-width:800px){
+	.p-desc {
+		width: 60%;
+		max-width: 56%;
+	}
 }
  @media(max-width:730px){
     .prices {
-      width: 5em;
+      width: 6em;
     }
     .p-desc {
       width: 38%;
     }
  }
  @media(max-width:500px){
-    .p-desc {
+    /* .p-desc {
 	  width: 100%;
 	  display: block;
 	  padding: 0.5em;
@@ -676,7 +688,7 @@ input[type="text"] {
     .prices li {
 	  width: 49%;
 	  font-size: 1.25em;
-    }
+    } */
  }
  /*========================================*/
 #cart .accordion{
@@ -874,7 +886,7 @@ overflow: visible !important;
 	display: inline-block;
 }
 #cart-window {
-	height: 23em;
+	height: 24em;
 	overflow-y: hidden;
 	position: relative;
 	border: none;
@@ -885,13 +897,15 @@ overflow: visible !important;
 	font-size: 1.25em;
 	padding-top: 1em;
 }
-#packages{
+#packages,.book-package-now{
 	background-color: purple;
 	color: gold;
 	border: none;
 	font-size: 1.25em;
 	font-weight: bolder;
 	text-transform: capitalize;
+	display: inline-block;
+	margin-top: 1em;
 	background: #a9db80;
 	background: -moz-linear-gradient(top, #d50491 0%, #b4007a 100%);
 	background: -webkit-linear-gradient(top, #d50491 0%,#b4007a 100%);
@@ -914,7 +928,7 @@ overflow: visible !important;
 }
 /*remove later */
 #prices-wrapper{
-	min-height: 23em;
+	min-height: 24em;
 }
 .group-btn-container {
     min-height: 22em;
@@ -929,14 +943,16 @@ overflow: visible !important;
 	margin: 0.5em auto;
 	border-radius: 1em;
 }
-.next {
-	font-size: 1.5em;
-	background-color: gold;
-	border: 0;
-	text-transform: capitalize;
-	padding: 0.15em 0em;
-	width: 100%;
-	text-align: center;
+#next,
+#book-now-button{
+    background-color: gold;
+    padding: 0.5em;
+    font-size: 0.9em;
+    width: 100%;
+    border: none;
+    text-transform: capitalize;
+    margin: 0.5em auto;
+    border-radius: 1em;
 }
 #cart-bg{
 	width: 100%;
@@ -951,17 +967,17 @@ overflow: visible !important;
 	background-color: rgba(0,0,0,0.5);
 	z-index: 998;
 }
-#close-cart{
+#close-cart {
 	position: fixed;
 	z-index: 999;
-	right: 1em;
-	top: 1em;
-	color: white;
 	padding: 1em;
-	text-transform: capitalize;
+	left: 70%;
+	top: 32%;
+	color: white;
+	transform: translate(-33%,-70%);
 	background: none;
-	border: 0.15em solid;
-	border-radius: 1em;
+	font-weight: bolder;
+	font-size: 1.25em;
 	display: none;
 }
 #cart-bg.active #close-cart{
@@ -975,10 +991,18 @@ overflow: visible !important;
 	transform: translate(-50%,-50%);
 	z-index: 999;
 	width: 90%;
-	max-width: 40em;
-	height: 90%;
+	height: 35em;
 	overflow-y: scroll;
 	border: 0.5em solid #8bc34a;
+	max-width: 40em;
+}
+#cart-bg.active #cart{
+	position:relative;
+}
+#cart-bg.active #date-bloc,
+#cart-bg.active #group-container,
+#cart-bg.active #prices-wrapper{
+	height: 35em;
 }
 #sCBtn{
 	background-color: gold;
@@ -996,3 +1020,43 @@ overflow: visible !important;
 	font-size: 1.25em;
 	padding: 1em;
 }
+.seating-chart{
+	width: 8em;
+}
+.seating-chart img{
+	width: 100%;
+	cursor: pointer;
+}
+.seating-chart.active{
+	position: fixed;
+	left:0;
+	top: 0;
+	z-index: 998;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+}
+.seating-chart.active img{
+	position: fixed;
+	width: 100%;
+	max-width: 25em;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+  background-color: white;
+}
+.seating-chart span {
+    position: fixed;
+    left: 70%;
+    top: 32%;
+    color: white;
+    transform: translate(-33%,-70%);
+    font-size: 1.25em;
+    display: none;
+}
+.seating-chart.active span{
+	display: block;
+}
+/* #schedules-collectors{
+	border: 0.1em solid black;
+} */
